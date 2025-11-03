@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>جامعة كلباء - دليل الأقسام</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css">
@@ -13,6 +13,7 @@
   </style>
 </head>
 <body class="bg-beige-100">
+
   <header class="bg-yellow-900 text-white p-4 text-2xl font-semibold">مرحبا بكم في جامعة كلباء</header>
 
   <section class="bg-yellow-50 p-4 text-yellow-900">
@@ -54,7 +55,10 @@
     const deptsList = document.getElementById('deptsList');
 
     const map = L.map('map').setView([25.1122, 56.3245], 17);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
 
     const entrance = [25.1120, 56.3245];
     L.marker(entrance).addTo(map).bindPopup('بوابة الجامعة').openPopup();
@@ -98,5 +102,6 @@
 
     map.on('locationerror', function(e){ alert('تعذر الحصول على الموقع: ' + e.message); });
   </script>
+
 </body>
 </html>
